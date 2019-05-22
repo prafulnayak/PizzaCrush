@@ -5,9 +5,11 @@ import android.support.v4.app.Fragment;
 import org.sairaa.pizzacrush.Fragment.PizzaHomeFragment;
 import org.sairaa.pizzacrush.Fragment.SauceAndCheeseFragment;
 import org.sairaa.pizzacrush.Fragment.ToppingFragment;
+import org.sairaa.pizzacrush.Model.ConstantField;
 import org.sairaa.pizzacrush.Model.Pizza;
+import org.sairaa.pizzacrush.R;
 
-public class Util {
+public class Util implements ConstantField {
 
     public static Fragment getFragment(int f){
         Fragment fragment = null;
@@ -26,5 +28,35 @@ public class Util {
 
         }
         return fragment;
+    }
+
+    public static int getPizzaSizeResource(String pizzaSize) {
+        int resourceId = 0;
+        switch (pizzaSize){
+            case Large:
+                resourceId = R.drawable.large_pizza_size;
+                break;
+            case Medium:
+                resourceId = R.drawable.medium_pizza_size;
+                break;
+            case Small:
+                resourceId = R.drawable.small_pizza_size;
+        }
+        return resourceId;
+    }
+
+    public static int getSaucePizzaSize(String pizzaSize) {
+        int resourceId = 0;
+        switch (pizzaSize){
+            case Large:
+                resourceId = R.drawable.large_sauce;
+                break;
+            case Medium:
+                resourceId = R.drawable.medium_sauce;
+                break;
+            case Small:
+                resourceId = R.drawable.small_sauce;
+        }
+        return resourceId;
     }
 }

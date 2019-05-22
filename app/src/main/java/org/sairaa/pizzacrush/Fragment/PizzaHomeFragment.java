@@ -23,11 +23,8 @@ public class PizzaHomeFragment extends Fragment {
     private RadioButton largeR, mediumR,smallR;
     private TextView largeT, mediumT, smallT;
 
-
     public PizzaHomeFragment() {
     }
-
-
 
     private OnFragmentChangeListner changeListner;
 
@@ -104,7 +101,7 @@ public class PizzaHomeFragment extends Fragment {
     }
 
     public interface OnFragmentChangeListner {
-        public void onFragmentChange();
+        void onFragmentChange();
         Pizza getPizzaDetails();
         void setPizzaDetails(Pizza pizza);
     }

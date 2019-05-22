@@ -5,15 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.sairaa.pizzacrush.Fragment.PizzaHomeFragment;
+import org.sairaa.pizzacrush.Fragment.SauceAndCheeseFragment;
+import org.sairaa.pizzacrush.Model.ConstantField;
 import org.sairaa.pizzacrush.Model.Pizza;
 import org.sairaa.pizzacrush.Utils.Util;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View,
-        View.OnClickListener,
-        PizzaHomeFragment.OnFragmentChangeListner {
+        View.OnClickListener, ConstantField,
+        PizzaHomeFragment.OnFragmentChangeListner,
+        SauceAndCheeseFragment.OnSauceFragmentChangeListner {
 
     private static Pizza pizza;
 
@@ -22,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private ImageButton nextButton;
     private ImageButton previousButton;
     private MainPresenter mainPresenter;
+    private ImageView pizzaSize;
+    private ImageView pizaaSauceSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         previousButton = findViewById(R.id.previous);
         previousButton.setOnClickListener(this);
+        pizzaSize= findViewById(R.id.pizza_size_imageView);
+        pizaaSauceSize = findViewById(R.id.pizza_sauce_image);
+
 
         setUpFirstUI();
     }
@@ -53,18 +62,27 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public void setUpFirstUI() {
 
         loadFragment(Util.getFragment(fragmentNo));
+        setUpPizzaImage(pizza);
     }
     @Override
-    public boolean loadFragment(Fragment fragment) {
+    public void loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
 //                    .addToBackStack(null)
                     .commit();
-            return true;
         }
-        return false;
+    }
+
+    @Override
+    public void setUpPizzaImage(Pizza pizza) {
+        if(pizza.getSauce()>0){
+            pizaaSauceSize.setVisibility(View.VISIBLE);
+            pizaaSauceSize.setImageResource(Util.getSaucePizzaSize(pizza.getPizzaSize()));
+        }else {
+            pizaaSauceSize.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -74,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 mainPresenter.onNextClick(fragmentNo);
                 fragmentNo++;
                 break;
+            case R.id.previous:
+                mainPresenter.onPreviousClick(fragmentNo);
+                fragmentNo--;
         }
     }
 
@@ -83,13 +104,34 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
+    public void onSauceFragmentChange() {
+
+    }
+
+    @Override
+    public Pizza getSauceAndCheese() {
+        return pizza;
+    }
+
+    @Override
+    public void setSauceAndCheese(Pizza pizzaT) {
+        pizza.setSauce(pizzaT.getSauce());
+        pizza.setCheese(pizzaT.getCheese());
+        Toast.makeText(this, ""+pizza.getSauce()+""+pizza.getCheese(), Toast.LENGTH_SHORT).show();
+        setUpPizzaImage(pizza);
+    }
+
+    @Override
     public Pizza getPizzaDetails() {
         return pizza;
     }
 
     @Override
-    public void setPizzaDetails(Pizza pizza) {
-        MainActivity.pizza.setPizzaSize(pizza.getPizzaSize());
+    public void setPizzaDetails(Pizza pizzaT) {
+        pizza.setPizzaSize(pizzaT.getPizzaSize());
         Toast.makeText(this, ""+pizza.getPizzaSize(), Toast.LENGTH_SHORT).show();
+        pizzaSize.setImageResource(Util.getPizzaSizeResource(pizza.getPizzaSize()));
+        setUpPizzaImage(pizza);
+
     }
 }

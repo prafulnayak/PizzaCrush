@@ -2,6 +2,8 @@ package org.sairaa.pizzacrush;
 
 import android.support.v4.app.Fragment;
 
+import org.sairaa.pizzacrush.Model.Pizza;
+
 public interface MainContract {
 
     interface View{
@@ -10,7 +12,9 @@ public interface MainContract {
 
         void setUpFirstUI();
 
-        boolean loadFragment(Fragment fragment);
+        void loadFragment(Fragment fragment);
+
+        void setUpPizzaImage(Pizza pizza);
 
     }
 
@@ -18,7 +22,7 @@ public interface MainContract {
 
         void onNextClick(int currentFragment);
 
-        void onPreviousClick();
+        void onPreviousClick(int fragmentNo);
 
         void loadCorrespondingFragment();
     }

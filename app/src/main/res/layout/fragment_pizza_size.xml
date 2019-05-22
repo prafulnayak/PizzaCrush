@@ -10,11 +10,8 @@
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
+        style="@style/FragmantHeaderText"
         android:text="@string/select_size_of_the_pizza"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

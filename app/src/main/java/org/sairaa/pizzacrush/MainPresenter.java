@@ -18,7 +18,9 @@ public class MainPresenter implements MainContract.UserActionsListener {
     }
 
     @Override
-    public void onPreviousClick() {
+    public void onPreviousClick(int fragmentNo) {
+        fragmentNo--;
+        mainView.loadFragment(Util.getFragment(fragmentNo));
 
     }
 
