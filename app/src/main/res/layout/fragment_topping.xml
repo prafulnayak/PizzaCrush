@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/FragmantHeaderText"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/select_topping"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mushrum_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/mushrum_checkBox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/mushrums" />
+
+    <CheckBox
+        android:id="@+id/mushrum_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mushrum"
+        app:layout_constraintBottom_toBottomOf="@+id/mushrum_image"
+        app:layout_constraintEnd_toStartOf="@+id/mushrum_price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mushrum_image"
+        app:layout_constraintTop_toTopOf="@+id/mushrum_image" />
+
+    <TextView
+        android:id="@+id/mushrum_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/mushrum_checkBox"
+        app:layout_constraintEnd_toStartOf="@+id/mushrum_layout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mushrum_checkBox"
+        app:layout_constraintTop_toTopOf="@+id/mushrum_checkBox" />
+
+    <LinearLayout
+        android:id="@+id/mushrum_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/mushrum_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mushrum_price"
+        app:layout_constraintTop_toTopOf="@+id/mushrum_price">
+
+        <Button
+            android:id="@+id/mushrum_minus"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/mushrum_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/mushrum_plus"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="+" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/onion_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/onion_checkBox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mushrum_image"
+        app:srcCompat="@drawable/onion" />
+
+    <CheckBox
+        android:id="@+id/onion_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    Onion"
+        app:layout_constraintBottom_toBottomOf="@+id/onion_image"
+        app:layout_constraintEnd_toStartOf="@+id/onion_price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/onion_image"
+        app:layout_constraintTop_toTopOf="@+id/onion_image" />
+
+    <TextView
+        android:id="@+id/onion_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/onion_checkBox"
+        app:layout_constraintEnd_toStartOf="@+id/onion_layout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/onion_checkBox"
+        app:layout_constraintTop_toTopOf="@+id/onion_checkBox" />
+
+    <LinearLayout
+        android:id="@+id/onion_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/onion_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/onion_price"
+        app:layout_constraintTop_toTopOf="@+id/onion_price">
+
+
+        <Button
+            android:id="@+id/onion_minus"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/onion_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/onion_plus"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="+" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/corn_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/corn_checkBox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onion_image"
+        app:srcCompat="@drawable/sweetcorn" />
+
+    <TextView
+        android:id="@+id/corn_price"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/corn_checkBox"
+        app:layout_constraintEnd_toStartOf="@+id/corn_layout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/corn_checkBox"
+        app:layout_constraintTop_toTopOf="@+id/corn_checkBox" />
+
+    <LinearLayout
+        android:id="@+id/corn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/corn_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/corn_price"
+        app:layout_constraintTop_toTopOf="@+id/corn_price">
+
+        <Button
+            android:id="@+id/corn_minus"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/corn_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/corn_plus"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="+" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/corn_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sweet Corn"
+        app:layout_constraintBottom_toBottomOf="@+id/corn_image"
+        app:layout_constraintEnd_toStartOf="@+id/corn_price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/corn_image"
+        app:layout_constraintTop_toTopOf="@+id/corn_image" />
+
+
+</android.support.constraint.ConstraintLayout>

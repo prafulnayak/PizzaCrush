@@ -5,4 +5,5 @@
     <string name="small">Small</string>
     <string name="select_size_of_the_pizza">Select Size Of the Pizza</string>
     <string name="seclect_sauce_and_cheese">Seclect Sauce And Cheese</string>
+    <string name="select_topping">Select Topping</string>
 </resources>

@@ -21,7 +21,7 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="395dp"
-        android:layout_height="304dp"
+        android:layout_height="227dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -51,7 +51,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -65,9 +65,78 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/large_sauce" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/mushrum_image_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            app:srcCompat="@drawable/mushrums"
+            tools:layout_editor_absoluteX="66dp"
+            tools:layout_editor_absoluteY="371dp" />
+
+        <ImageView
+            android:id="@+id/onion_image_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            app:srcCompat="@drawable/onion"
+            tools:layout_editor_absoluteX="181dp"
+            tools:layout_editor_absoluteY="371dp" />
+
+        <ImageView
+            android:id="@+id/corn_image_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            app:srcCompat="@drawable/sweetcorn"
+            tools:layout_editor_absoluteX="296dp"
+            tools:layout_editor_absoluteY="371dp" />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/pizza_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/pizza_cheese_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/large_cheese" />
 </android.support.constraint.ConstraintLayout>

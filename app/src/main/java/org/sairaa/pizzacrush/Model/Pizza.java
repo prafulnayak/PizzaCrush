@@ -6,10 +6,10 @@ public class Pizza {
     private int sauce;
     private int cheese;
     private int mushrum;
-    private int oleev;
+    private int onion;
     private int pepper;
     private int checken;
-    private int sausage;
+    private int sweetCorn;
 
     public Pizza() {
     }
@@ -20,10 +20,10 @@ public class Pizza {
         this.sauce = sauce;
         this.cheese = cheese;
         this.mushrum = mushrum;
-        this.oleev = oleev;
+        this.onion = oleev;
         this.pepper = pepper;
         this.checken = checken;
-        this.sausage = sausage;
+        this.sweetCorn = sausage;
     }
 
     public String getPizzaName() {
@@ -66,12 +66,12 @@ public class Pizza {
         this.mushrum = mushrum;
     }
 
-    public int getOleev() {
-        return oleev;
+    public int getOnion() {
+        return onion;
     }
 
-    public void setOleev(int oleev) {
-        this.oleev = oleev;
+    public void setOnion(int onion) {
+        this.onion = onion;
     }
 
     public int getPepper() {
@@ -90,11 +90,11 @@ public class Pizza {
         this.checken = checken;
     }
 
-    public int getSausage() {
-        return sausage;
+    public int getSweetCorn() {
+        return sweetCorn;
     }
 
-    public void setSausage(int sausage) {
-        this.sausage = sausage;
+    public void setSweetCorn(int sweetCorn) {
+        this.sweetCorn = sweetCorn;
     }
 }

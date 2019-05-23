@@ -16,6 +16,10 @@ public interface MainContract {
 
         void setUpPizzaImage(Pizza pizza);
 
+        void setUpPizzaTopping(Pizza pizza);
+
+        void setUpTotalPrice(Pizza pizza);
+
     }
 
     interface UserActionsListener{
