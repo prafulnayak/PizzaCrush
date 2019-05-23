@@ -62,7 +62,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+
+        android:drawableStart="@drawable/indian_rupee"
         app:layout_constraintBottom_toTopOf="@+id/medium_price"
         app:layout_constraintEnd_toEndOf="@+id/medium_price"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -74,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:drawableStart="@drawable/indian_rupee"
         app:layout_constraintBottom_toTopOf="@+id/small_price"
         app:layout_constraintEnd_toEndOf="@+id/small_price"
         app:layout_constraintTop_toBottomOf="@+id/large_price" />
@@ -86,7 +87,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
+        android:drawableStart="@drawable/indian_rupee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"

@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 
 import org.sairaa.pizzacrush.Model.Pizza;
 
+//MVP implementation
 public interface MainContract {
 
     interface View{

@@ -13,10 +13,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.sairaa.pizzacrush.Model.ConstantField;
 import org.sairaa.pizzacrush.Model.Pizza;
+import org.sairaa.pizzacrush.Model.PriceConstant;
 import org.sairaa.pizzacrush.R;
+import org.sairaa.pizzacrush.Utils.Util;
 
-public class PizzaHomeFragment extends Fragment {
+public class PizzaHomeFragment extends Fragment implements ConstantField, PriceConstant {
 
     private Pizza pizza;
     private RadioGroup radioGroupSize;
@@ -25,7 +28,7 @@ public class PizzaHomeFragment extends Fragment {
 
     public PizzaHomeFragment() {
     }
-
+    //Listner to activity
     private OnFragmentChangeListner changeListner;
 
     @Nullable
@@ -53,14 +56,19 @@ public class PizzaHomeFragment extends Fragment {
 //        changeListner.setPizzaDetails(pizza);
 
         pizza = changeListner.getPizzaDetails();
+
+        largeT.setText(String.valueOf(Util.getPizzaSizePrice(Large)));
+        mediumT.setText(String.valueOf(Util.getPizzaSizePrice(Medium)));
+        smallT.setText(String.valueOf(Util.getPizzaSizePrice(Small)));
+
         switch (pizza.getPizzaSize()){
-            case "Large":
+            case Large:
                 largeR.setChecked(true);
                 break;
-            case "Medium":
+            case Medium:
                 mediumR.setChecked(true);
                 break;
-            case "Small":
+            case Small:
                 smallR.setChecked(true);
 
         }
@@ -71,16 +79,16 @@ public class PizzaHomeFragment extends Fragment {
                 Toast.makeText(getActivity(), ""+i+radioGroup.getCheckedRadioButtonId(), Toast.LENGTH_SHORT).show();
                 switch (radioGroup.getCheckedRadioButtonId()){
                     case R.id.large_radio:
-                        pizza.setPizzaSize("Large");
+                        pizza.setPizzaSize(Large);
                         break;
                     case R.id.medium_radio:
-                        pizza.setPizzaSize("Medium");
+                        pizza.setPizzaSize(Medium);
                         break;
                     case R.id.min_radio:
-                        pizza.setPizzaSize("Small");
+                        pizza.setPizzaSize(Small);
                         break;
                     default:
-                        pizza.setPizzaSize("Large");
+                        pizza.setPizzaSize(Large);
 
                 }
                 changeListner.setPizzaDetails(pizza);

@@ -21,7 +21,7 @@ import org.sairaa.pizzacrush.Model.Pizza;
 import org.sairaa.pizzacrush.Model.PriceConstant;
 import org.sairaa.pizzacrush.R;
 
-public class SauceAndCheeseFragment extends Fragment implements PriceConstant, View.OnClickListener {
+public class SauceAndCheeseFragment extends Fragment implements PriceConstant {
 
     private Pizza pizza;
     private ImageView sauceImage, cheeseImage;
@@ -34,6 +34,7 @@ public class SauceAndCheeseFragment extends Fragment implements PriceConstant, V
     private LinearLayout sauceLayout, cheeseLayout;
 
     private final String TAG_SAUCE = SauceAndCheeseFragment.class.getSimpleName();
+    //Listner to Activity
     private OnSauceFragmentChangeListner changeListner;
 
     @Override
@@ -93,15 +94,19 @@ public class SauceAndCheeseFragment extends Fragment implements PriceConstant, V
 
         setPrice(pizza);
         setQuantity(pizza);
+        sauceLayout.setVisibility(View.GONE);
+        cheeseLayout.setVisibility(View.GONE);
 
         if(pizza.getSauce()>0){
             sauceCheck.setChecked(true);
+            sauceLayout.setVisibility(View.VISIBLE);
         }else {
             sauceCheck.setChecked(false);
         }
 
         if(pizza.getCheese()>0){
             cheeseCheck.setChecked(true);
+            cheeseLayout.setVisibility(View.VISIBLE);
         }else {
             cheeseCheck.setChecked(false);
         }
@@ -144,7 +149,7 @@ public class SauceAndCheeseFragment extends Fragment implements PriceConstant, V
             @Override
             public void onClick(View view) {
                 if(pizza.getSauce()>=2){
-                    Toast.makeText(getActivity(), "Cannot add more then 2 Cup of Sauce", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.sauce_2_cup, Toast.LENGTH_SHORT).show();
                 }else {
                     pizza.setSauce(pizza.getSauce()+1);
                     setQuantity(pizza);
@@ -158,7 +163,7 @@ public class SauceAndCheeseFragment extends Fragment implements PriceConstant, V
             @Override
             public void onClick(View view) {
                 if(pizza.getSauce()<=0){
-                    Toast.makeText(getActivity(), "Cannot be less then 0", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.canot_lessthen_zero, Toast.LENGTH_SHORT).show();
                 }else {
                     pizza.setSauce(pizza.getSauce()- 1);
                     setQuantity(pizza);
@@ -172,7 +177,7 @@ public class SauceAndCheeseFragment extends Fragment implements PriceConstant, V
             @Override
             public void onClick(View view) {
                 if(pizza.getCheese()>=2){
-                    Toast.makeText(getActivity(), "Cannot add more then 2 Cup of Cheese", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.cannot_2_cheese, Toast.LENGTH_SHORT).show();
                 }else {
                     pizza.setCheese(pizza.getCheese()+1);
                     setQuantity(pizza);
@@ -186,7 +191,7 @@ public class SauceAndCheeseFragment extends Fragment implements PriceConstant, V
             @Override
             public void onClick(View view) {
                 if(pizza.getCheese()<=0){
-                    Toast.makeText(getActivity(), "Cannot be less then 0", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.canot_lessthen_zero, Toast.LENGTH_SHORT).show();
                 }else {
                     pizza.setCheese(pizza.getCheese()-1);
                     setQuantity(pizza);
@@ -270,32 +275,7 @@ public class SauceAndCheeseFragment extends Fragment implements PriceConstant, V
         Log.i(TAG_SAUCE,"On Detach");
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.sauce_plus:
 
-                break;
-            case R.id.sauce_minus:
-
-                break;
-            case R.id.cheese_plus:
-
-                break;
-            case R.id.cheese_minus:
-                if(pizza.getCheese()>=2){
-                    Toast.makeText(getActivity(), "Cannot add more then 2 Cup of Sauce", Toast.LENGTH_SHORT).show();
-                }else if(pizza.getCheese()<=0){
-                    Toast.makeText(getActivity(), "Cannot be less then 0", Toast.LENGTH_SHORT).show();
-                }else {
-                    pizza.setCheese(pizza.getCheese()-1);
-                    setQuantity(pizza);
-                    setPrice(pizza);
-                    changeListner.setSauceAndCheese(pizza);
-                }
-                break;
-        }
-    }
 
     public interface OnSauceFragmentChangeListner{
         void onSauceFragmentChange();

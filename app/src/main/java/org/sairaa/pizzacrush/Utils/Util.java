@@ -90,4 +90,15 @@ public class Util implements ConstantField, PriceConstant {
         }
         return pizzaSizePrice;
     }
+
+    public static double getTotalPrice(Pizza pizza) {
+        double totalPrice = 0;
+        totalPrice = totalPrice + Util.getPizzaSizePrice(pizza.getPizzaSize());
+        totalPrice = totalPrice + (pizza.getCheese()*CheeseUnitPrice);
+        totalPrice = totalPrice + (pizza.getSauce()*SauceUnitPrice);
+        totalPrice = totalPrice + (pizza.getMushrum()*MushrumUnitPrice);
+        totalPrice = totalPrice + (pizza.getSweetCorn()*SweetCornUnitPrice);
+        totalPrice = totalPrice + (pizza.getOnion()*OnionUnitPrice);
+        return totalPrice;
+    }
 }

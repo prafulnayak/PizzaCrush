@@ -6,4 +6,14 @@
     <string name="select_size_of_the_pizza">Select Size Of the Pizza</string>
     <string name="seclect_sauce_and_cheese">Seclect Sauce And Cheese</string>
     <string name="select_topping">Select Topping</string>
+    <string name="no_screen">No More Screen Available</string>
+    <string name="success_order">Your Order has been placed for the pizza</string>
+    <string name="order_amount_before_text">Price Of the pizza is Rs.</string>
+    <string name="unsuccess_order">Please select at least one ingredient</string>
+    <string name="sauce_2_cup">Cannot add more then 2 Cup of Sauce</string>
+    <string name="canot_lessthen_zero">Cannot be less then 0</string>
+    <string name="cannot_2_cheese">Cannot add more then 2 Cup of Cheese</string>
+    <string name="cannot_more_then_2_onion">Cannot add more then 2 Units of Onion</string>
+    <string name="cannot_2_unit_corn">Cannot add more then 2 Units of Sweet Corn</string>
+    <string name="cannot_2_unit_mushrums">Cannot add more then 2 Units of Mushrum</string>
 </resources>
